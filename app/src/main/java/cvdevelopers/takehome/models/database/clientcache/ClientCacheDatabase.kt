@@ -9,4 +9,5 @@ import cvdevelopers.takehome.models.Client
 @TypeConverters(ClientTypeConverters::class)
 abstract class ClientCacheDatabase: RoomDatabase() {
 
+    abstract fun clientCacheDao(): ClientCacheDao
 }
