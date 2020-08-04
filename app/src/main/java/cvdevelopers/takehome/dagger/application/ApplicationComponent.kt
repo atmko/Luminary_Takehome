@@ -1,7 +1,8 @@
 package cvdevelopers.takehome.dagger.application
 
-import cvdevelopers.takehome.MainActivity
 import cvdevelopers.takehome.LuminaryTakeHomeApplication
+import cvdevelopers.takehome.dagger.presentation.PresentationComponent
+import cvdevelopers.takehome.dagger.presentation.PresentationModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -12,5 +13,6 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(ApplicationModule::class, NetworkClientModule::class))
 interface ApplicationComponent {
     fun inject(app: LuminaryTakeHomeApplication)
-    fun inject(target: MainActivity)
+
+    fun newPresentationComponent(presentationModule: PresentationModule): PresentationComponent
 }
