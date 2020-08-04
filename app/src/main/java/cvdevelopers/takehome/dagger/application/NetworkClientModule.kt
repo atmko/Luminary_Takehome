@@ -1,4 +1,4 @@
-package cvdevelopers.takehome.dagger
+package cvdevelopers.takehome.dagger.application
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson

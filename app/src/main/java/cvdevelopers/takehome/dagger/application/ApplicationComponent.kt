@@ -1,4 +1,4 @@
-package cvdevelopers.takehome.dagger
+package cvdevelopers.takehome.dagger.application
 
 import cvdevelopers.takehome.MainActivity
 import cvdevelopers.takehome.LuminaryTakeHomeApplication
