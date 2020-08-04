@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import cvdevelopers.githubstalker.databinding.FragmentClientListBinding
 import cvdevelopers.takehome.view.common.BaseFragment
+import javax.inject.Inject
 
 /**
  * Fragment to display client list
@@ -14,6 +15,9 @@ class ClientListFragment : BaseFragment() {
 
     private var _binding: FragmentClientListBinding? = null
     private val binding get() = _binding!!
+
+    @Inject
+    lateinit var clientAdapter: ClientAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
