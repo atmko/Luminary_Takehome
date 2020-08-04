@@ -39,6 +39,7 @@ repositories {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api "com.jakewharton:butterknife:$butterknife_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
 
     api "com.google.dagger:dagger-android-support:$daggerVersion"
