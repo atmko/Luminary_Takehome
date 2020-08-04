@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import cvdevelopers.githubstalker.databinding.FragmentClientListBinding
@@ -41,6 +42,7 @@ class ClientListFragment : BaseFragment() {
         _binding = FragmentClientListBinding.inflate(inflater, container, false)
 
         configureViews()
+        observeViewModel()
 
         return binding.root
     }
@@ -62,5 +64,19 @@ class ClientListFragment : BaseFragment() {
             layoutManager = LinearLayoutManager(context)
             adapter = clientAdapter
         }
+    }
+
+    private fun observeViewModel() {
+        viewModel.clients.observe(viewLifecycleOwner, Observer { clients ->
+            clientAdapter.updateClients(clients)
+        })
+
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            binding.swipeRefreshLayout.isRefreshing = it
+        })
+
+        viewModel.isError.observe(viewLifecycleOwner, Observer {
+            binding.textViewErrorMessage.visibility = if (it) View.VISIBLE else View.GONE
+        })
     }
 }
