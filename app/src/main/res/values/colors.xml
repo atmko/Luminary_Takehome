@@ -7,4 +7,6 @@
     <color name="light_blue">#00A0D8</color>
     <color name="dark_blue">#0D7FA7</color>
     <color name="notification">	#C0C0C0</color>
+
+    <color name="color_unloaded_image">#d8d8d8</color>
 </resources>
