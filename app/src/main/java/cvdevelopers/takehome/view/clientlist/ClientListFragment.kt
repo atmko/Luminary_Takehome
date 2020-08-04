@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import cvdevelopers.githubstalker.databinding.FragmentClientListBinding
 import cvdevelopers.takehome.view.common.BaseFragment
+import cvdevelopers.takehome.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 /**
@@ -16,6 +17,8 @@ class ClientListFragment : BaseFragment() {
     private var _binding: FragmentClientListBinding? = null
     private val binding get() = _binding!!
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
     @Inject
     lateinit var clientAdapter: ClientAdapter
 
