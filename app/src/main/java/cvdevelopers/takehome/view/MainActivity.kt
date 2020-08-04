@@ -1,8 +1,9 @@
-package cvdevelopers.takehome
+package cvdevelopers.takehome.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cvdevelopers.githubstalker.R
+import cvdevelopers.takehome.LuminaryTakeHomeApplication
 import cvdevelopers.takehome.dagger.presentation.PresentationModule
 
 class MainActivity : AppCompatActivity() {
