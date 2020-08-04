@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:paddingTop="@dimen/x2_layout_margin"
+    android:paddingBottom="@dimen/x2_layout_margin">
 
     <ImageView
         android:id="@+id/client_image_view"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="@dimen/client_image_dimen"
+        android:layout_height="@dimen/client_image_dimen"
+        android:layout_marginStart="@dimen/x2_layout_margin"
+        android:layout_marginLeft="@dimen/x2_layout_margin"
         android:background="@drawable/circular_mask"
         android:contentDescription="@string/client_photo"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
         android:id="@+id/text_view_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="@dimen/x2_layout_margin"
+        android:layout_marginLeft="@dimen/x2_layout_margin"
         app:layout_constraintBottom_toBottomOf="@id/client_image_view"
         app:layout_constraintStart_toEndOf="@id/client_image_view"
         app:layout_constraintTop_toTopOf="@id/client_image_view"
