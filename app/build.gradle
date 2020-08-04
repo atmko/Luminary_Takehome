@@ -29,6 +29,7 @@ ext {
     daggerVersion = "2.27"
     jsr305Version = "3.0.1"
     supportLibraryVersion = '1.1.0'
+    room_version = "2.2.5"
 }
 
 repositories {
@@ -43,6 +44,11 @@ dependencies {
     api "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt  "androidx.room:room-compiler:$room_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
