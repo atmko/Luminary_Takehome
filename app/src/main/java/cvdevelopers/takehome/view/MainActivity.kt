@@ -1,21 +1,16 @@
 package cvdevelopers.takehome.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cvdevelopers.githubstalker.R
-import cvdevelopers.takehome.LuminaryTakeHomeApplication
-import cvdevelopers.takehome.dagger.presentation.PresentationModule
+import cvdevelopers.takehome.view.common.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (application as LuminaryTakeHomeApplication)
-                .appComponent
-                .newPresentationComponent(PresentationModule())
-                .inject(this)
+        getPresentationComponent().inject(this)
 
     }
 
