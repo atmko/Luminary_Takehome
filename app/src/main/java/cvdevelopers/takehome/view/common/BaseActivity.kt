@@ -9,10 +9,17 @@ import cvdevelopers.takehome.dagger.presentation.PresentationModule
 
 open class BaseActivity : AppCompatActivity() {
 
+    private var isInjected: Boolean = false
+
     @UiThread
     protected fun getPresentationComponent(): PresentationComponent {
-        return getApplicationComponent()
+        if (!isInjected) {
+            isInjected = true
+            return getApplicationComponent()
                     .newPresentationComponent(PresentationModule())
+        }
+
+        throw RuntimeException("getPresentationComponent() called more than once")
     }
 
     private fun getApplicationComponent(): ApplicationComponent {
