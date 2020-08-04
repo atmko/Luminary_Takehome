@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Luminary Take Home</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="fetch_data">Fetching Data</string>
     <string name="error">Error</string>
 
@@ -11,4 +8,6 @@
     <string name="fetch_user">Fetching User</string>
 
     <string name="search">Search</string>
+
+    <string name="error_loading_clients">Couldn\'t Load Clients</string>
 </resources>
