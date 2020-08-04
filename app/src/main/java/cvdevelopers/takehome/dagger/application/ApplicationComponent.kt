@@ -10,7 +10,11 @@ import javax.inject.Singleton
  * Created by CamiloVega on 10/7/17.
  */
 @Singleton
-@Component(modules = arrayOf(ApplicationModule::class, NetworkClientModule::class))
+@Component(modules = arrayOf(
+        ApplicationModule::class,
+        NetworkClientModule::class,
+        DatabaseModule::class)
+)
 interface ApplicationComponent {
     fun inject(app: LuminaryTakeHomeApplication)
 
