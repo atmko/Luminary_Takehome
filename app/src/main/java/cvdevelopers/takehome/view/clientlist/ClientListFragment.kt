@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import cvdevelopers.githubstalker.databinding.FragmentClientListBinding
 import cvdevelopers.takehome.view.common.BaseFragment
 import cvdevelopers.takehome.viewmodel.ClientListViewModel
@@ -38,6 +39,9 @@ class ClientListFragment : BaseFragment() {
                               savedInstanceState: Bundle?): View? {
 
         _binding = FragmentClientListBinding.inflate(inflater, container, false)
+
+        configureViews()
+
         return binding.root
     }
 
@@ -46,6 +50,17 @@ class ClientListFragment : BaseFragment() {
                 .get(ClientListViewModel::class.java)
         if (viewModel.clients.value!!.isEmpty()) {
             viewModel.getClients()
+        }
+    }
+
+    private fun configureViews() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            viewModel.getNewClients()
+        }
+
+        binding.recyclerViewClients.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = clientAdapter
         }
     }
 }
